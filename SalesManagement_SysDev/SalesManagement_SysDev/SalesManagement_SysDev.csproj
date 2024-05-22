@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F312C41-8A35-41B9-A847-2243F49D40F2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SalesManagement_SysDev</RootNamespace>
+    <AssemblyName>SalesManagement_SysDev</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connection\ArrivalDbConnection.cs" />
+    <Compile Include="Connection\ChumonDbConnection.cs" />
+    <Compile Include="Connection\ClientDbConnection.cs" />
+    <Compile Include="Connection\EmployeeDbConnection.cs" />
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="Entity\M_MajorClassification.cs" />
+    <Compile Include="Entity\M_Product.cs" />
+    <Compile Include="F_OrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_OrderDetail.Designer.cs">
+      <DependentUpon>F_OrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistics\F_ChumonDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistics\F_ChumonDetail.Designer.cs">
+      <DependentUpon>F_ChumonDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection\HattyuDbConnection.cs" />
+    <Compile Include="Others\InputFormCheck.cs" />
+    <Compile Include="Logistics\F_Syukko.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistics\F_Syukko.Designer.cs">
+      <DependentUpon>F_Syukko.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistics\F_Warehousing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistics\F_Warehousing.Designer.cs">
+      <DependentUpon>F_Warehousing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistics\F_Chumon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistics\F_Chumon.Designer.cs">
+      <DependentUpon>F_Chumon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistics\F_Hattyu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistics\F_Hattyu.Designer.cs">
+      <DependentUpon>F_Hattyu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistics\F_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistics\F_Product.Designer.cs">
+      <DependentUpon>F_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Others\NumericRange.cs" />
+    <Compile Include="Connection\OrderDbConnection.cs" />
+    <Compile Include="Connection\ProductDbConnect.cs" />
+    <Compile Include="SalesOfficce\F_Shipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesOfficce\F_Shipment.Designer.cs">
+      <DependentUpon>F_Shipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOfficce\F_Arrival.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesOfficce\F_Arrival.Designer.cs">
+      <DependentUpon>F_Arrival.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOfficce\F_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesOfficce\F_Order.Designer.cs">
+      <DependentUpon>F_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainOffice\F_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainOffice\F_Employee.Designer.cs">
+      <DependentUpon>F_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainOffice\F_Sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainOffice\F_Sale.Designer.cs">
+      <DependentUpon>F_Sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainOffice\F_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainOffice\F_Client.Designer.cs">
+      <DependentUpon>F_Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="History\F_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="History\F_History.Designer.cs">
+      <DependentUpon>F_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Others\F_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Others\F_Home.Designer.cs">
+      <DependentUpon>F_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Others\F_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Others\F_Login.Designer.cs">
+      <DependentUpon>F_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="History\F_LoginHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="History\F_LoginHistory.Designer.cs">
+      <DependentUpon>F_LoginHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logistics\F_Logistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistics\F_Logistics.Designer.cs">
+      <DependentUpon>F_Logistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="History\F_OperationHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="History\F_OperationHistory.Designer.cs">
+      <DependentUpon>F_OperationHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOfficce\F_SalesOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesOfficce\F_SalesOffice.Designer.cs">
+      <DependentUpon>F_SalesOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Others\F_ScreenLock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Others\F_ScreenLock.Designer.cs">
+      <DependentUpon>F_ScreenLock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Sub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Sub.Designer.cs">
+      <DependentUpon>F_Sub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\M_Client.cs" />
+    <Compile Include="Entity\M_Employee.cs" />
+    <Compile Include="Entity\M_Maker.cs" />
+    <Compile Include="Entity\M_Position.cs" />
+    <Compile Include="Entity\M_SalesOffice.cs" />
+    <Compile Include="Entity\M_SmallClassification.cs" />
+    <Compile Include="MainOffice\F_MainOffice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainOffice\F_MainOffice.Designer.cs">
+      <DependentUpon>F_MainOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entity\T_Arrival.cs" />
+    <Compile Include="Entity\T_ArrivalDetail.cs" />
+    <Compile Include="Entity\T_Chumon.cs" />
+    <Compile Include="Entity\T_ChumonDetail.cs" />
+    <Compile Include="Entity\T_Hattyu.cs" />
+    <Compile Include="Entity\T_HattyuDetail.cs" />
+    <Compile Include="Entity\T_LoginHistory.cs" />
+    <Compile Include="Entity\T_OperationHistory.cs" />
+    <Compile Include="Entity\T_Order.cs" />
+    <Compile Include="Entity\T_OrderDetail.cs" />
+    <Compile Include="Entity\T_Sale.cs" />
+    <Compile Include="Entity\T_SaleDetail.cs" />
+    <Compile Include="Entity\T_Shipment.cs" />
+    <Compile Include="Entity\T_ShipmentDetail.cs" />
+    <Compile Include="Entity\T_Stock.cs" />
+    <Compile Include="Entity\T_Syukko.cs" />
+    <Compile Include="Entity\T_SyukkoDetail.cs" />
+    <Compile Include="Entity\T_Warehousing.cs" />
+    <Compile Include="Entity\T_WarehousingDetail.cs" />
+    <Compile Include="SalesManagement_DevContext.cs" />
+    <Compile Include="Connection\SyukkoDbConnection.cs" />
+    <EmbeddedResource Include="F_OrderDetail.resx">
+      <DependentUpon>F_OrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistics\F_ChumonDetail.resx">
+      <DependentUpon>F_ChumonDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistics\F_Syukko.resx">
+      <DependentUpon>F_Syukko.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistics\F_Warehousing.resx">
+      <DependentUpon>F_Warehousing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistics\F_Chumon.resx">
+      <DependentUpon>F_Chumon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistics\F_Hattyu.resx">
+      <DependentUpon>F_Hattyu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistics\F_Product.resx">
+      <DependentUpon>F_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesOfficce\F_Shipment.resx">
+      <DependentUpon>F_Shipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesOfficce\F_Arrival.resx">
+      <DependentUpon>F_Arrival.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesOfficce\F_Order.resx">
+      <DependentUpon>F_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainOffice\F_Employee.resx">
+      <DependentUpon>F_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainOffice\F_Sale.resx">
+      <DependentUpon>F_Sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainOffice\F_Client.resx">
+      <DependentUpon>F_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History\F_History.resx">
+      <DependentUpon>F_History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Others\F_Home.resx">
+      <DependentUpon>F_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Others\F_Login.resx">
+      <DependentUpon>F_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History\F_LoginHistory.resx">
+      <DependentUpon>F_LoginHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logistics\F_Logistics.resx">
+      <DependentUpon>F_Logistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History\F_OperationHistory.resx">
+      <DependentUpon>F_OperationHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesOfficce\F_SalesOffice.resx">
+      <DependentUpon>F_SalesOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Others\F_ScreenLock.resx">
+      <DependentUpon>F_ScreenLock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Sub.resx">
+      <DependentUpon>F_Sub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainOffice\F_MainOffice.resx">
+      <DependentUpon>F_MainOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
