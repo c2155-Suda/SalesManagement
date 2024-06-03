@@ -46,7 +46,7 @@ namespace SalesManagement_SysDev
         {
             try
             {
-                if (employee.CheckEmployeeExsistence(LoginEmID))
+                if (!employee.CheckEmployeeExsistence(LoginEmID))
                 {
                     MessageBox.Show("ログイン中の社員IDは削除済みです", "エラー");
                     return false;
