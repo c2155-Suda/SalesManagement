@@ -26,6 +26,7 @@ namespace SalesManagement_SysDev
         private void F_History_Load(object sender, EventArgs e)
         {
             formLoginHis = new F_LoginHistory();
+            formLoginHis.LoginEmID = parentFormHome.logID;
             formLoginHis.TopLevel = false;
             formLoginHis.Dock = DockStyle.Fill;
             panelHisSelect.Controls.Add(formLoginHis);

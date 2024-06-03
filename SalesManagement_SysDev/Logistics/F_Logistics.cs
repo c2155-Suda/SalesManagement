@@ -29,6 +29,7 @@ namespace SalesManagement_SysDev
 
             formProduct = new F_Product();
             formProduct.TopLevel = false;
+            formProduct.LoginEmID = parentFormHome.logID;
             formProduct.Dock = DockStyle.Fill;
             panelLogistics.Controls.Add(formProduct);
 
